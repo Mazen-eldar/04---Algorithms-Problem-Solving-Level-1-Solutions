@@ -14,3 +14,22 @@ cout << "Pleas enter Your Last Name ?" << endl;
 cin >> Info.LastName;
 return Info;
 }
+تعديل لعكس االسم والكنية ، التعديل يكون في سطر واحد فقط //
+string GetFullName(stInfo Info , bool Reversed)
+{
+string FullName = "";
+if(Reversed)
+FullName = Info.LastName + " " + Info.FirstName;
+else
+FullName = Info.FirstName + " " + Info.LastName;
+return FullName;
+}
+تستطيع إعطاء أمر للطابعة مثل وليس للشاشة //
+void PrintFullName(string FullName)
+{
+cout << "\n Your full name is : " << FullName << endl;
+}
+int main()
+{
+PrintFullName(GetFullName(ReadInfo() , false));
+}
